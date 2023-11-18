@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  dev-databse:
+    image: postgres:15.00
+    container_name: dev-databse
+    ports:
+      -5434:5432
+    enviroment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: abc123456789
+      POSTGRES_DB: testdb
+    networks:
+      - nestjs-network
+networks:
+  nestjs-network:
+#-d: deamon/background mode
+#docker compose up -d
